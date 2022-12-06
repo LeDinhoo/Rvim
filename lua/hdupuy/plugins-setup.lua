@@ -92,6 +92,7 @@ return packer.startup(function(use)
         ts_update()
         end,
     })
+    use 'nvim-treesitter/nvim-treesitter-context'
 
     -- Auto closing --
     use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
@@ -104,6 +105,12 @@ return packer.startup(function(use)
 
     -- Managing upper Tab --
     use 'romgrk/barbar.nvim'
+
+    -- Debugger --
+    -- use 'mfussenegger/nvim-dap'
+
+    -- 42 Formatter --
+    use 'cacharle/c_formatter_42.vim'
 
 
     if packer_bootstrap then

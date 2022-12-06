@@ -19,13 +19,13 @@ db.custom_footer = nil
 
 db.custom_center = {
     { desc = '🅃 🄾 🄾 🄻 🅂', action = ''},
+    { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Recent Files', action = 'Telescope oldfiles' },
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Find File', action = 'Telescope find_files' },
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Search Text', action = 'Telescope live_grep' },
-    { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Recent Files', action = 'Telescope oldfiles' },
     { desc = '🅂 🄴 🅃 🅃 🄸 🄽 🄶 🅂', action = ''},
-    { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Colorscheme', action = 'Telescope colorscheme' },
-    { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Dashboard', action = 'edit ~/.config/nvim/lua/hdupuy/plugins/dashboard.lua' },
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Plugins', action = 'edit ~/.config/nvim/lua/hdupuy/plugins-setup.lua' },
+    { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Dashboard', action = 'edit ~/.config/nvim/lua/hdupuy/plugins/dashboard.lua' },
+    { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Colorscheme', action = 'Telescope colorscheme' },
 
 }
 db.preview_file_Path = nil

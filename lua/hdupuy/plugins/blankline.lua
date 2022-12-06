@@ -12,7 +12,9 @@ vim.opt.list = true
 -- vim.opt.listchars:append "eol:↴"
 
 require("indent_blankline").setup {
-    space_char_blankline = " ",
+    space_char_blankline = "",
+    show_current_context = false,
+    show_current_context_start = true,
     char_highlight_list = {
         "IndentBlanklineIndent1",
         "IndentBlanklineIndent2",
@@ -21,6 +23,4 @@ require("indent_blankline").setup {
         "IndentBlanklineIndent5",
         "IndentBlanklineIndent6",
     },
-    show_current_context = true,
-    show_current_context_start = true,
 }

@@ -10,7 +10,7 @@ require("tokyonight").setup({
   styles = {
     -- Style to be applied to different syntax groups
     -- Value is any valid attr-list value for `:help nvim_set_hl`
-    comments = { italic = false, bold = true },
+    comments = { italic = true, bold = true },
     keywords = { italic = true, bold = true },
     string   = { italic = true },
     functions = {},
