@@ -27,7 +27,6 @@ db.custom_center = {
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Dashboard', action = 'edit ~/.config/nvim/lua/hdupuy/plugins/dashboard.lua' },
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Plugins', action = 'edit ~/.config/nvim/lua/hdupuy/plugins-setup.lua' },
 
-
 }
 db.preview_file_Path = nil
 db.preview_file_height = 0
