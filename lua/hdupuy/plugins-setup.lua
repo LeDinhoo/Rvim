@@ -1,8 +1,8 @@
 
 ----------------------------------
---█▀▀█ █── █──█ █▀▀▀ ─▀─ █▀▀▄ █▀▀  
---█▄▄█ █── █──█ █─▀█ ▀█▀ █──█ ▀▀█  
---█─── ▀▀▀ ─▀▀▀ ▀▀▀▀ ▀▀▀ ▀──▀ ▀▀▀  
+--█▀▀█ █── █──█ █▀▀▀ ─▀─ █▀▀▄ █▀▀
+--█▄▄█ █── █──█ █─▀█ ▀█▀ █──█ ▀▀█
+--█─── ▀▀▀ ─▀▀▀ ▀▀▀▀ ▀▀▀ ▀──▀ ▀▀▀
 -----------------------------------
 
 -----🄿 🄰 🄲 🄺 🄴 🅁  🄲 🄾 🄽 🄵 🄸 🄶 -----
@@ -36,82 +36,67 @@ if not status then
   return
 end
 
-----🄻 🄸 🅂 🅃  🄾 🄵  🄿 🄻 🅄 🄶 🄸 🄽 🅂            ----
+----🄻 🄸 🅂 🅃  🄾 🄵  🄿 🄻 🅄 🄶 🄸 🄽 🅂----
 
 return packer.startup(function(use)
+	-- Packer --
+	use("wbthomason/packer.nvim")
 
-    -- Packer & Plenary --
-    use("wbthomason/packer.nvim")
-    use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
+	-- Plenary and file tree
+	use("nvim-lua/plenary.nvim")
+	use("nvim-tree/nvim-tree.lua")
+	use("nvim-tree/nvim-web-devicons")
+	use("numToStr/Comment.nvim")
+	use("nvim-lualine/lualine.nvim")
+	use("folke/tokyonight.nvim")
+	use("lukas-reineke/indent-blankline.nvim")
 
-    -- File explorer & icons --
-    use ("nvim-tree/nvim-tree.lua")
-    use("nvim-tree/nvim-web-devicons")
+	-- Telescope and fuzzy search
+	use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" })
+	use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
 
-    -- Commenting --
-    use "numToStr/Comment.nvim"
+	-- Completion
+	use("hrsh7th/nvim-cmp")
+	use("hrsh7th/cmp-buffer")
+	use("hrsh7th/cmp-path")
 
-    -- Bottom bar --
-    use("nvim-lualine/lualine.nvim")
+	-- Snippets
+	use("L3MON4D3/LuaSnip")
+	use("saadparwaiz1/cmp_luasnip")
+	use("rafamadriz/friendly-snippets")
 
-    -- Colorscheme --
-    use 'folke/tokyonight.nvim'
+	-- Language Server Protocol
+	use("williamboman/mason.nvim")
+	use("williamboman/mason-lspconfig.nvim")
+	use("neovim/nvim-lspconfig")
+	use("hrsh7th/cmp-nvim-lsp")
+	use({ "glepnir/lspsaga.nvim", branch = "main" })
+	use("onsails/lspkind.nvim")
 
-    -- Indent with colors --
-    use "lukas-reineke/indent-blankline.nvim"
+	-- Treesitter and language support
+	use({
+	  "nvim-treesitter/nvim-treesitter",
+	  run = function()
+		local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+		ts_update()
+	  end,
+	})
+	use("nvim-treesitter/nvim-treesitter-context")
 
-    -- Fuzzy finding & Telescope --
-    use({ "nvim-telescope/telescope.nvim", branch = "0.1.x" }) -- fuzzy finder
-    use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
+	-- Other
+	use("windwp/nvim-autopairs")
+	use("lewis6991/gitsigns.nvim")
+	use("glepnir/dashboard-nvim")
+	use("romgrk/barbar.nvim")
+	use({ "nyoom-engineering/oxocarbon.nvim" })
+	use("anuvyklack/pretty-fold.nvim")
 
-    -- Autocompletion --
-    use("hrsh7th/nvim-cmp") -- completion plugin
-    use("hrsh7th/cmp-buffer") -- source for text in buffer
-    use("hrsh7th/cmp-path") -- source for file system paths
+	use 'mfussenegger/nvim-dap'
+    use "Pocco81/DAPInstall.nvim"
 
-    -- Snippets --
-    use("L3MON4D3/LuaSnip") -- snippet engine
-    use("saadparwaiz1/cmp_luasnip") -- for autocompletion
-    use("rafamadriz/friendly-snippets") -- useful snippets
+	-- Sync
+	if packer_bootstrap then
+	  require("packer").sync()
+	end
+  end)
 
-    -- Managing & installing LSP servers, linters & formatters --
-    use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
-    use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
-
-    -- Configuring LSP servers
-    use("neovim/nvim-lspconfig") -- easily configure language servers
-    use("hrsh7th/cmp-nvim-lsp") -- for autocompletion
-    use({ "glepnir/lspsaga.nvim", branch = "main" }) -- enhanced lsp uis
-    use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
-
-    -- Treesitter configuration --
-    use({
-        "nvim-treesitter/nvim-treesitter",
-        run = function()
-        local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
-        ts_update()
-        end,
-    })
-    use 'nvim-treesitter/nvim-treesitter-context'
-
-    -- Auto closing --
-    use("windwp/nvim-autopairs") -- autoclose parens, brackets, quotes, etc...
-
-    -- Git integration --
-    use("lewis6991/gitsigns.nvim") -- show line modifications on left hand side
-
-    -- Dashboard --
-    use "glepnir/dashboard-nvim"
-
-    -- Managing upper Tab --
-    use 'romgrk/barbar.nvim'
-
-    -- Carbon colorscheme --
-    use {'nyoom-engineering/oxocarbon.nvim'}
-
-    use "anuvyklack/pretty-fold.nvim"
-
-    if packer_bootstrap then
-    require("packer").sync()
-  end
-end)

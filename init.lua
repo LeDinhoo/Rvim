@@ -15,6 +15,4 @@ require("hdupuy.plugins.treesitter")
 require("hdupuy.plugins.gitsigns")
 require("hdupuy.plugins.blankline")
 require("hdupuy.plugins.dashboard")
-require("hdupuy.plugins.context")
-require("hdupuy.plugins.pretty")
--- require("hdupuy.plugins.nvimdap")
+
