@@ -36,7 +36,7 @@ if not status then
   return
 end
 
-----🄻 🄸 🅂 🅃  🄾 🄵  🄿 🄻 🅄 🄶 🄸 🄽 🅂 ----
+----🄻 🄸 🅂 🅃  🄾 🄵  🄿 🄻 🅄 🄶 🄸 🄽 🅂            ----
 
 return packer.startup(function(use)
 
@@ -106,12 +106,10 @@ return packer.startup(function(use)
     -- Managing upper Tab --
     use 'romgrk/barbar.nvim'
 
-    -- Debugger --
-    -- use 'mfussenegger/nvim-dap'
+    -- Carbon colorscheme --
+    use {'nyoom-engineering/oxocarbon.nvim'}
 
-    -- 42 Formatter --
-    use 'cacharle/c_formatter_42.vim'
-
+    use "anuvyklack/pretty-fold.nvim"
 
     if packer_bootstrap then
     require("packer").sync()

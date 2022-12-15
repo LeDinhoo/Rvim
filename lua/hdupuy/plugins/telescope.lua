@@ -12,7 +12,13 @@ end
 
 -- configure telescope
 telescope.setup({
-  -- configure custom mappings
+ -- Preview colorscheme --
+    pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
+  },
+ -- configure custom mappings
   defaults = {
     mappings = {
       i = {

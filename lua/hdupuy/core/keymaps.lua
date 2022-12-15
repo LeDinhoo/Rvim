@@ -10,6 +10,9 @@ local keymap = vim.keymap -- for conciseness
 keymap.set("n", "<S-Up>", ":m -2<CR>")
 keymap.set("n", "<S-Down>", ":m +1<CR>")
 keymap.set("n", "<S-A-Down>", ":t.<CR>")
+keymap.set("n", "<C-s>", ":w<CR>")
+keymap.set("n", "<leader>cd", ":colorscheme tokyonight-day<CR>")
+keymap.set("n", "<leader>cn", ":colorscheme tokyonight-night<CR>")
 
 -- Managing Tabs --
 keymap.set("n", "<leader>to", ":tabnew<CR>") -- open new tab
