@@ -16,6 +16,10 @@ vim.api.nvim_create_autocmd('BufWinLeave', {
   end
 })
 
+local function_underline = require('function_underline')
+
+vim.api.nvim_command("autocmd CursorHold * lua function_underline.on_cursor_hold()")
+
 local opt = vim.opt -- for conciseness
 
 -- line numbers

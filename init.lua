@@ -16,4 +16,4 @@ require("hdupuy.plugins.treesitter")
 require("hdupuy.plugins.gitsigns")
 require("hdupuy.plugins.blankline")
 require("hdupuy.plugins.dashboard")
-
+require("hdupuy.plugins.neoscroll")

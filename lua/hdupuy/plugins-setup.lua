@@ -1,10 +1,3 @@
-
-----------------------------------
---█▀▀█ █── █──█ █▀▀▀ ─▀─ █▀▀▄ █▀▀
---█▄▄█ █── █──█ █─▀█ ▀█▀ █──█ ▀▀█
---█─── ▀▀▀ ─▀▀▀ ▀▀▀▀ ▀▀▀ ▀──▀ ▀▀▀
------------------------------------
-
 vim.cmd([[
   augroup packer_user_config
     autocmd!
@@ -70,11 +63,21 @@ return packer.startup(function(use)
 	use("glepnir/dashboard-nvim")
 	use("romgrk/barbar.nvim")
 	use({ "nyoom-engineering/oxocarbon.nvim" })
-	use("anuvyklack/pretty-fold.nvim")
 
-	use 'mfussenegger/nvim-dap'
-    use "Pocco81/DAPInstall.nvim"
+	use {
+		'rcarriga/nvim-notify',
+		config = function ()
+		  require("notify").setup {
+			stages = 'fade_in_slide_out',
+			background_colour = 'FloatShadow',
+			timeout = 3000,
+		  }
+		  vim.notify = require('notify')
+		end
+	  }
 
+	use 'karb94/neoscroll.nvim'
+	
 	-- Sync
 	if packer_bootstrap then
 	  require("packer").sync()
