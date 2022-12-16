@@ -77,7 +77,7 @@ return packer.startup(function(use)
 	  }
 
 	use 'karb94/neoscroll.nvim'
-	
+
 	-- Sync
 	if packer_bootstrap then
 	  require("packer").sync()
