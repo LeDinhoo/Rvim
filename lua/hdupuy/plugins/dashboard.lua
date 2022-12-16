@@ -18,7 +18,6 @@ db.custom_header = nil
 db.custom_footer = nil
 
 db.custom_center = {
-    { desc = '🅃 🄾 🄾 🄻 🅂', action = ''},
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Recent Files', action = 'Telescope oldfiles' },
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Find File', action = 'Telescope find_files' },
     { icon_hl={fg="#e9c46a"}, icon = '',desc = ' Search Text', action = 'Telescope live_grep' },

@@ -34,5 +34,4 @@ require("tokyonight").setup({
   }
 })
 
-
 vim.cmd[[colorscheme oxocarbon]]

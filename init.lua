@@ -1,3 +1,4 @@
+require("hdupuy.plugins.ensure_packer")
 require("hdupuy.plugins-setup")
 require("hdupuy.core.options")
 require("hdupuy.core.keymaps")
